@@ -1,0 +1,11 @@
+Group Hydro
+Group HydroEstimation
+Group HydroUsage
+Group HydroInfo
+Number Hydro_Estimated_Total "Estimated Amount [$%.2f]" <energy> (Hydro,HydroEstimation) { mqtt="<[pellet:/stats/hydro/amount:state:REGEX((.*?))]" }
+String Hydro_Billing_Period "Billing Period [%s]" <energy> (Hydro,HydroEstimation) { mqtt="<[pellet:/stats/hydro/period:state:REGEX((.*?))]" }
+Number Hydro_Billing_Days "Length of Period [%.0f days]" <energy> (Hydro,HydroEstimation) { mqtt="<[pellet:/stats/hydro/length:state:REGEX((.*?))]" }
+String Hydro_Use_AsOf "Usage for day [%s]" <energy> (Hydro,HydroUsage) { mqtt="<[pellet:/stats/hydro/asof:state:REGEX((.*?))]" }
+Number Hydro_Use_Low "Off-peak [$%.2f]" <energy> (Hydro,HydroUsage) { mqtt="<[pellet:/stats/hydro/off_peak:state:REGEX((.*?))]" }
+Number Hydro_Use_Mid "Mid-peak [$%.2f]" <energy> (Hydro,HydroUsage) { mqtt="<[pellet:/stats/hydro/mid_peak:state:REGEX((.*?))]" }
+Number Hydro_Use_High "On-peak [$%.2f]" <energy> (Hydro,HydroUsage) { mqtt="<[pellet:/stats/hydro/on_peak:state:REGEX((.*?))]" }

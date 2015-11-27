@@ -1,0 +1,5 @@
+Group	TV
+Switch	TV_Power	"TV Power [%s]"				<television>	(TV)	{ mqtt="<[pellet:/tv/state/power:state:default],>[pellet:/tv/update/power:command:ON:1],>[pellet:/tv/update/power:command:OFF:0]" }
+Switch	TV_Power_State	"TV Power State (Readonly) [%s]" 	<television>	(TV)	{ mqtt="<[pellet:/tv/state/power:state:default]" }
+Switch	TV_Permission	"TV Use Permitted [%s]"			<switch>	(TV)	{ mqtt="<[pellet:/tv/state/permission:state:default],>[pellet:/tv/update/permission:command:ON:1],>[pellet:/tv/update/permission:command:OFF:0]" }
+Switch	TV_Permission_State "TV Use Permitted (Readonly) [%s]"	<switch>	(TV)	{ mqtt="<[pellet:/tv/state/permission:state:default]" }

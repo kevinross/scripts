@@ -1,0 +1,12 @@
+Group	AC
+Number	AC_Temperature_Actual	"AC Actual Temperature [%.1f C]"	<temperature>	(AC)		{ mqtt="<[pellet:/ac/sensor/temp:state:default]" }
+Number	AC_Humidity_Actual		"AC Actual Humidity [%.1f %]"		<temperature>	(AC)		{ mqtt="<[pellet:/ac/sensor/humidity:state:default]" }
+Number	AC_Temperature			"AC Target Temperature [%.1f C]"	<temperature>	(AC)		{ mqtt="<[pellet:/ac/state/temp:state:default],>[pellet:/ac/update/temp:command:*:default" }
+Switch	AC_Power				"AC Power [%s]"						<switch>		(AC)		{ mqtt="<[pellet:/ac/state/power:state:default],>[pellet:/ac/update/power:command:ON:1],>[pellet:/ac/update/power:command:OFF:0]" }
+String	AC_Mode					"AC Mode [%s]"						<climate>		(AC)		{ mqtt="<[pellet:/ac/state/mode:state:default],>[pellet:/ac/update/mode:command:*:default]" }
+String	AC_Speed				"AC Speed [%s]"						<wind>			(AC)		{ mqtt="<[pellet:/ac/state/speed:state:default],>[pellet:/ac/update/speed:command:*:default]" }
+String	AC_Reload				"AC Reload Settings"				<power>			(AC)		{ mqtt=">[pellet:/ac/pushstate:command:*:default]" }
+Switch	AC_Reset				"AC Reset Remote"					<power> 		(AC)		{ mqtt="<[pellet:/ac/state/reset:state:default],>[pellet:/ac/update/reset:command:*:default]" }
+Switch	AC_CMode				"AC Cycle Mode "					<power> 		(AC)		{ mqtt="<[pellet:/ac/state/cyclemode:state:default],>[pellet:/ac/update/cyclemode:command:*:default]" }
+Switch	AC_CSpeed				"AC Cycle Speed"					<power> 		(AC)		{ mqtt="<[pellet:/ac/state/cyclespeed:state:default],>[pellet:/ac/update/cyclespeed:command:*:default]" }
+Switch	AC_Temp_Visible 		"AC Temp Visible" <switch> (AC)

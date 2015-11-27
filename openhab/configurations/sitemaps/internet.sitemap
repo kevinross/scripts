@@ -1,0 +1,14 @@
+sitemap internet label="Internet Usage"
+{
+	Frame label="Internet" {
+		Text item=Internet_LastUpdated 
+		Text item=Internet_DL_Peak 
+		Text item=Internet_UL_Peak 
+		Text item=Internet_DL_OffPeak 
+		Text item=Internet_UL_OffPeak 
+		Text item=Internet_Total 
+	}
+	Frame label="" {
+		Text item=MOTD
+	}
+}

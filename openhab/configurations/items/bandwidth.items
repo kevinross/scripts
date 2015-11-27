@@ -1,0 +1,8 @@
+Group Internet
+Number Internet_DL_Peak "Download Usage (Peak, Limited) [%.1f GB]" <network> (Internet) { mqtt="<[pellet:/stats/internet/dl/peak:state:REGEX((.*))]" }
+Number Internet_UL_Peak "Upload Usage (Peak, Unlimited) [%.1f GB]" <network> (Internet) { mqtt="<[pellet:/stats/internet/ul/peak:state:REGEX((.*))]" }
+Number Internet_DL_OffPeak "Download Usage (Off-peak, Unlimited, 2am-8am) [%.1f GB]" <network> (Internet) { mqtt="<[pellet:/stats/internet/dl/offpeak:state:REGEX((.*))]" }
+Number Internet_UL_OffPeak "Upload Usage (Off-peak, Unlimited) [%.1f GB]" <network> (Internet) { mqtt="<[pellet:/stats/internet/ul/offpeak:state:REGEX((.*))]" }
+Number Internet_Total "Total Usage (Sum of (off)peak, (un)limited) [%.1f GB]" <network> (Internet) { mqtt="<[pellet:/stats/internet/sum:state:REGEX((.*))]" }
+String Internet_LastUpdated "Usage as of date [%s]" <network> (Internet) { mqtt="<[pellet:/stats/internet/asof:state:REGEX((.*))]" }
+String MOTD "Message of the day [%s]" <info> { exec="<[cat /opt/openhab/configurations/scripts/motd.txt:30000:REGEX((.*))]" }

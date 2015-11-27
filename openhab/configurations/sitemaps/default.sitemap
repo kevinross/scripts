@@ -1,0 +1,19 @@
+sitemap default label="Apartment"
+{
+	Frame label="Usage and Costs" {
+		Group item=Internet
+		Group item=HydroEstimation
+	}
+	Frame label="TV" {
+		Group item=TV
+	}
+	Frame label="Air Conditioner" {
+		Switch item=AC_Power label="Power" mappings=[ON="On",OFF="Off"]
+		Switch item=AC_Mode label="Mode" mappings=["ac"="ac", "fan"="fan", "dehumid"="dehumidifier"] visibility=[AC_Power==ON]
+		Switch item=AC_Speed label="Speed" mappings=["low"="low", "medium"="medium", "high"="high"] visibility=[AC_Power==ON]
+		Setpoint item=AC_Temperature label="Temp [%.1f F]" minValue=61 maxValue=80 step=1 visibility=[AC_Temp_Visible==ON]
+		Switch item=AC_Reset label="Reset" mappings=[ON="Reset",OFF="Set"] visibility=[AC_Power==ON]
+		Switch item=AC_CMode label="Cycle Mode" mappings=[ON="Cycle",OFF="Reset"] visibility=[AC_Power==ON]
+		Switch item=AC_CSpeed label="Cycle Speed" mappings=[ON="Cycle",OFF="Reset"] visibility=[AC_Power==ON]
+	}
+}

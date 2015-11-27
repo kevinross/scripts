@@ -1,0 +1,22 @@
+rule AC_Pwr_Set
+when 
+	Item AC_Temperature_Actual received update
+then
+	if (AC_Temperature.state == Uninitialized) {
+	    AC_Reload.sendCommand("dontcare")
+	    AC_Reset.state = OFF
+	    AC_CMode.state = OFF
+	    AC_CSpeed.state = OFF
+	}
+end
+
+rule AC_Temp_Visible
+when
+	Item AC_Power received update
+then
+	if (AC_Power.state == ON && AC_Mode.state == "ac") {
+		AC_Temp_Visible.sendCommand(ON)
+	} else {
+		AC_Temp_Visible.sendCommand(OFF)
+	}
+end
